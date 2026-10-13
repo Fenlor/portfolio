@@ -41,9 +41,8 @@ console errors), restart it; a reload is not enough.
   "View full project" link. `Modal` unmounts when closed, so `ImageCarousel` re-reads `startIndex` each open.
 - **`Footer` is used as both header and footer** (top and bottom of each page): name and a `mailto:` email.
   The phone number was removed on purpose; don't add it back.
-- **Styling is all in `src/index.css`** (`App.css` is an unused template leftover, as are `hero.png`,
-  `react.svg`, `vite.svg`, `icons.svg` and the empty `PersonalSummary.jsx`). The theme is dark with hard-coded
-  colours; the commented palette block in the file lists the intended colours. Headings need the unitless
+- **Styling is all in `src/index.css`**. The theme is dark with hard-coded colours; the palette comment at
+  the top of the file lists the intended colours. Headings need the unitless
   `line-height` rule because `:root` sets a fixed one that otherwise makes wrapped headings overlap.
 - **Mobile layout gotchas** already hit here: flex items default to `min-width: auto`, so the wide thumbnail
   track can push the page sideways (`.title-content > *` sets `min-width: 0`), and a *wrapping* flex column
