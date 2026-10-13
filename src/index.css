@@ -389,3 +389,61 @@ body{
     outline-offset: 2px;
   }
 }
+
+/* Image viewer: a column whose image takes only the height left over, so the
+   thumbnails and "View full project" always fit on short screens */
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  max-height: 90vh;
+  max-height: 90dvh; /* excludes mobile browser toolbars where supported */
+  overflow: hidden;
+
+  & > * {
+    flex-shrink: 0;
+  }
+
+  & .image-carousel {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  & .big-preview {
+    flex: 1 1 auto;
+    min-height: 0;
+    width: 100%;
+    max-width: 70vw;
+    object-fit: contain;
+    margin-bottom: 12px;
+  }
+
+  & .thumb-carousel {
+    flex-shrink: 0;
+  }
+
+  & .thumb {
+    width: 96px;
+    height: 64px;
+  }
+
+  & .view-full-btn {
+    align-self: flex-start;
+    margin-top: 12px;
+  }
+}
+
+@media (max-height: 500px) {
+  .modal-content {
+    padding: 12px;
+  }
+
+  .modal-close {
+    width: 32px;
+    height: 32px;
+    margin: -4px -4px 4px auto;
+    font-size: 24px;
+  }
+}
