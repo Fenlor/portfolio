@@ -1,16 +1,76 @@
-# React + Vite
+# Andrew Fenn — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+My personal portfolio site: a short intro and the projects I've built, each with screenshots, links and
+(where there is one) a demo video.
 
-Currently, two official plugins are available:
+**Software Engineer · Interactivity Creator · XR Enthusiast**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Featured projects
 
-## React Compiler
+| Project | What it is | Built with |
+| --- | --- | --- |
+| **ASDVR Application** | VR application developed with a psychology PhD student, for the Meta Quest headsets ([video](https://www.youtube.com/watch?v=0lrz7CGEIQg&list=PLZIxqPCwO_KfR7vQlYHblV19LgNNGHSS0)) | Unity, C#, Blender, Audacity |
+| **Starship Fenterprise** | Arcade-style space game that began as a phone prototype and grew into a PC game | Unity, C# |
+| **RecipeMe** | Recipe finder with search by name, country and category, and a hands-free cooking mode, built on [TheMealDB](https://www.themealdb.com/) | React, Vite, CSS |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech stack
 
-## Expanding the ESLint configuration
+- [React 19](https://react.dev/) with [React Router 7](https://reactrouter.com/) for client-side routing
+- [Vite 8](https://vite.dev/) for the dev server and production build
+- Plain CSS, no UI framework
+- ESLint with the React Hooks and React Refresh plugins
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Running it locally
+
+Requires Node.js 20.19+ or 22.12+.
+
+```bash
+npm install
+npm run dev        # http://localhost:5173 (also exposed on your LAN for testing on a phone)
+```
+
+Other scripts:
+
+```bash
+npm run build      # production build to dist/
+npm run preview    # serve the production build
+npm run lint       # ESLint
+```
+
+## How it's put together
+
+- **`src/data/projects.js`** holds every project's title, description, images, links and optional
+  YouTube video id. Pages read from it rather than hard-coding content.
+- **`src/pages/Home.jsx`** shows the intro and a card per project; clicking a thumbnail opens an image
+  viewer with a link to the full project page.
+- **`src/pages/ProjectDetails.jsx`** is one page for every project, at `/project/<id>`, with the video,
+  image carousel, description and links.
+- **`src/index.css`** has all the styles, including the phone layout.
+
+### Adding a project
+
+1. Put its images in `public/` and add an entry to `src/data/projects.js`:
+
+   ```js
+   myproject: {
+       id: "myproject",
+       title: "My Project",
+       thumbnail: image1,
+       images: [image1, image2],
+       youtubeId: "VIDEO_ID",             // optional: the part after watch?v= in a YouTube URL
+       description: "First paragraph.\nSecond paragraph.",
+       links: [{ label: "GitHub", url: "https://github.com/..." }]
+   }
+   ```
+
+2. Add a `ProjectSummary` for it in `src/pages/Home.jsx`. Its details page at `/project/myproject` works
+   automatically.
+
+## Deploying
+
+The site uses browser routing, so the host must serve `index.html` for every path (for example a
+Netlify `_redirects` rule or a Vercel rewrite); otherwise refreshing `/project/<id>` returns a 404.
+
+## Contact
+
+[afenn.dev@gmail.com](mailto:afenn.dev@gmail.com)
