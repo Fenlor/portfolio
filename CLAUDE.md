@@ -33,24 +33,26 @@ console errors), restart it; a reload is not enough.
   which looks the id up (lowercased) in `projects.js` and shows a not-found view for unknown ids. The old
   `/ASDVR`, `/SpaceGame`, `/RecipeMe` paths redirect there. There is no catch-all 404 route, and deploying
   needs a host rewrite to `index.html` for deep links.
-- **`Home` lists projects by name** (`projects.asdvr`, `projects.spacegame`, …), so a new project needs an
-  entry in `projects.js` *and* a `ProjectSummary` block in `Home.jsx`. Descriptions render with
-  `white-space: pre-line` only on the details page; on home cards the `\n` collapse to spaces.
-- **Image modal flow**: `ProjectSummary` (file is misspelled `ProjectSummmary.jsx`) passes `onSelect` to
-  `ThumbnailCarousel`; a thumbnail click opens `Modal` with `ImageCarousel` at that index plus a
-  "View full project" link. `Modal` unmounts when closed, so `ImageCarousel` re-reads `startIndex` each open.
-- **`Footer` is used as both header and footer** (top and bottom of each page): name and a `mailto:` email.
-  The phone number was removed on purpose; don't add it back.
-- **Styling is all in `src/index.css`**. The theme is dark with hard-coded colours; the palette comment at
-  the top of the file lists the intended colours. Headings need the unitless
-  `line-height` rule because `:root` sets a fixed one that otherwise makes wrapped headings overlap.
-- **Mobile layout gotchas** already hit here: flex items default to `min-width: auto`, so the wide thumbnail
-  track can push the page sideways (`.title-content > *` sets `min-width: 0`), and a *wrapping* flex column
-  sizes to its widest child (the mobile `.project-summary` uses `nowrap`).
+- **App shell**: `App.jsx` wraps every route in `Header` (sticky; brand plus `/#projects`, `/#about`,
+  contact) and `Footer`. `Home` scrolls to `location.hash` after render so those links work from other pages.
+- **`Home` = hero, project grid, `About`**. The grid maps `Object.values(projects)` to `ProjectCard`, so a
+  new project only needs an entry in `projects.js`. Cards show the first paragraph of `description`; the
+  details page shows all of it (`white-space: pre-line`).
+- **Image viewer**: the card's image is a button that opens `Modal` (labelled dialog, Escape, Tab trap,
+  focus returned to the opener) containing `ImageCarousel` and a "View full project" link. The modal is a
+  flex column capped at 90dvh so the image shrinks first on short screens; keep that when restyling.
+- **Styling is all in `src/index.css`**, driven by CSS variables on `:root`: a light set ("paper and
+  charcoal") and a dark set ("spruce and slate") under `prefers-color-scheme: dark`. Use the variables, never
+  raw colours; every text colour was picked to stay at or above 4.5:1 contrast in both modes. Headings, nav,
+  buttons and labels use `--mono`; body text uses `--sans`.
+- The phone number was removed from the site on purpose; don't add it back.
 
 ## Repo conventions
 
 - Commits use the GitHub no-reply address (`12216602+Fenlor@users.noreply.github.com`, repo-local git config):
   GitHub email privacy rejects pushes authored with the personal address.
-- `public/Andrew_cropped.jpg` (4.2 MB, not used yet) and `.claude/settings.local.json` are git-ignored; add a
-  resized copy of the photo when an about section uses it.
+- `public/Andrew_cropped.jpg` (4.2 MB original photo) and `.claude/settings.local.json` are git-ignored. The
+  about section uses `public/andrew.webp`, a 480 px square cut from that original; regenerate it from the
+  original rather than committing the full-size file.
+- `src/components/About.jsx` holds the bio text and a `CV_URL` constant; the CV link only renders once
+  `CV_URL` points at a PDF in `public/`.

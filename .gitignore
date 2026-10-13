@@ -26,5 +26,5 @@ dist-ssr
 # Claude Code per-user settings
 .claude/settings.local.json
 
-# Unused full-size photo; add a resized copy when the about section uses it
+# Full-size original of public/andrew.webp (the about photo); keep it out of the public repo
 public/Andrew_cropped.jpg

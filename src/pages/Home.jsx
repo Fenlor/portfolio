@@ -1,52 +1,44 @@
-import Footer from "../components/Footer.jsx";
-import {projects} from "../data/projects.js";
-import ProjectSummary from "../components/ProjectSummmary.jsx";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import { projects } from "../data/projects.js";
+import ProjectCard from "../components/ProjectCard.jsx";
+import About from "../components/About.jsx";
 
 const Home = () => {
-    return (
-        <div>
-            <Footer />
-            <div className={"title-content"}>
-                <h1 className={"line-break"}>Andrew Fenn</h1>
-                <h2 className={"line-break"}>Software Engineer, Interactivity Creator, XR Enthusiast</h2>
-                <p>Hello, and thanks for stopping by. I built this site as a portfolio and
-                    to show what a good web experience can be.
-                    Here is some info and links to a few projects I have worked on.
-                    Alongside commercial and hobby work is the early frontend
-                    of a recipe finder app that I designed.
-                </p>
-                <h2 className={"line-break"}>Some cool stuff that I have done</h2>
+    const { hash } = useLocation();
 
-                <div>
-                    <ProjectSummary
-                        id = {projects.asdvr.id}
-                        title = {projects.asdvr.title}
-                        description = {projects.asdvr.description}
-                        images = {projects.asdvr.images}
-                        links = {projects.asdvr.links}
-                    />
+    // header links are /#projects and /#about; scroll there after the page renders
+    useEffect(() => {
+        if (hash) document.getElementById(hash.slice(1))?.scrollIntoView();
+    }, [hash]);
+
+    return (
+        <>
+            <section className="hero container">
+                <p className="eyebrow">&gt; software engineer · interactivity creator · xr enthusiast</p>
+                <h1 className="hero-title">Andrew Fenn</h1>
+                <p className="hero-lead">
+                    I build interactive experiences: VR applications for Meta Quest, games in Unity,
+                    and web apps in React. Here are a few of my projects, commercial and hobby, including
+                    the early frontend of a recipe finder app I designed.
+                </p>
+                <div className="hero-actions">
+                    <a href="#projects" className="btn btn-primary">View projects</a>
+                    <a href="mailto:afenn.dev@gmail.com" className="btn btn-ghost">Get in touch</a>
                 </div>
-                <div>
-                    <ProjectSummary
-                        id = {projects.spacegame.id}
-                        title = {projects.spacegame.title}
-                        description = {projects.spacegame.description}
-                        images = {projects.spacegame.images}
-                        links = {projects.spacegame.links}
-                    />
+            </section>
+
+            <section id="projects" className="section container" aria-labelledby="projects-heading">
+                <h2 id="projects-heading" className="section-title">projects</h2>
+                <div className="project-grid">
+                    {Object.values(projects).map(project => (
+                        <ProjectCard key={project.id} project={project} />
+                    ))}
                 </div>
-                <div>
-                    <ProjectSummary
-                        id = {projects.recipeme.id}
-                        title = {projects.recipeme.title}
-                        description = {projects.recipeme.description}
-                        images = {projects.recipeme.images}
-                        links = {projects.recipeme.links}
-                    />
-                </div>
-            </div>
-            <Footer />
-        </div>
+            </section>
+
+            <About />
+        </>
     )
 }
 
