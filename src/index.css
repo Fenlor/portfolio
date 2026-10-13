@@ -366,3 +366,26 @@ body{
   outline: 2px solid #5fb37f;
   outline-offset: 2px;
 }
+
+.modal-close {
+  display: block;
+  margin: -8px -8px 8px auto;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: #f3f4f6;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+
+  &:hover {
+    background: #20462F;
+  }
+
+  &:focus-visible {
+    outline: 2px solid #5fb37f;
+    outline-offset: 2px;
+  }
+}

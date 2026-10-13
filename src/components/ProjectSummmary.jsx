@@ -29,7 +29,7 @@ const ProjectSummary = ({id, title, description, images, links}) => {
                 </div>
             </div>
 
-            <Modal isOpen={open} onClose={() => setOpen(false)}>
+            <Modal isOpen={open} onClose={() => setOpen(false)} label={`${title} images`}>
                 <ImageCarousel images={images} title={title} startIndex={startIndex} />
 
                 <Link to={`/project/${id}`} className="view-full-btn">
