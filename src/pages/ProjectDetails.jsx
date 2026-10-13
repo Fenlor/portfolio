@@ -34,7 +34,7 @@ const ProjectDetails = () => {
                         />
                     </div>
                 )}
-                <ImageCarousel key={project.id} images={project.images} />
+                <ImageCarousel key={project.id} images={project.images} title={project.title} />
                 <p className={"project-description"}>{project.description}</p>
                 <ProjectLinks links={project.links} />
             </div>

@@ -24,13 +24,13 @@ const ProjectSummary = ({id, title, description, images, links}) => {
                     <p>{description}</p>
                     <ProjectLinks links={links} />
                     <div className={"carousel"}>
-                        <ThumbnailCarousel images={images} onSelect={openAt} />
+                        <ThumbnailCarousel images={images} title={title} onSelect={openAt} />
                     </div>
                 </div>
             </div>
 
             <Modal isOpen={open} onClose={() => setOpen(false)}>
-                <ImageCarousel images={images} startIndex={startIndex} />
+                <ImageCarousel images={images} title={title} startIndex={startIndex} />
 
                 <Link to={`/project/${id}`} className="view-full-btn">
                     View full project →

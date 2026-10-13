@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ThumbnailCarousel = ({ images, onSelect }) => {
+const ThumbnailCarousel = ({ images, title, onSelect }) => {
     const [index, setIndex] = useState(0);
 
     const next = () => setIndex(i => Math.min(i + 1, images.length - 1));
@@ -8,23 +8,31 @@ const ThumbnailCarousel = ({ images, onSelect }) => {
 
     return (
         <div className="thumb-carousel">
-            <button className="nav-btn" onClick={prev}>‹</button>
+            <button className="nav-btn" onClick={prev} aria-label="Previous image">‹</button>
 
             <div className="thumb-track">
                 {images.map((img, i) => (
-                    <img
+                    <button
                         key={i}
-                        src={img}
-                        className={`thumb ${i === index ? "active" : ""}`}
+                        type="button"
+                        className="thumb-btn"
+                        aria-label={`View ${title} screenshot ${i + 1} of ${images.length}`}
+                        aria-pressed={i === index}
                         onClick={() => {
                             setIndex(i);
                             onSelect?.(i);
                         }}
-                    />
+                    >
+                        <img
+                            src={img}
+                            alt=""
+                            className={`thumb ${i === index ? "active" : ""}`}
+                        />
+                    </button>
                 ))}
             </div>
 
-            <button className="nav-btn" onClick={next}>›</button>
+            <button className="nav-btn" onClick={next} aria-label="Next image">›</button>
         </div>
     );
 };
