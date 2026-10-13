@@ -11,6 +11,7 @@ const ProjectDetails = () => {
     if (!project) {
         return (
             <div className={"project-details"}>
+                <title>Project not found | Andrew Fenn</title>
                 <h1 className={"line-break"}>Project not found</h1>
                 <p>There is no project called "{id}".</p>
                 <Link to="/" className="view-full-btn">← Back to all projects</Link>
@@ -21,6 +22,8 @@ const ProjectDetails = () => {
     return (
         <div>
             <div className={"project-details"}>
+                {/* React 19 hoists this into <head> while the page is shown; it wins over index.html's title */}
+                <title>{`${project.title} | Andrew Fenn`}</title>
                 <Link to="/" className="back-link">← All projects</Link>
                 <h1 className={"line-break"}>{project.title}</h1>
                 {project.youtubeId && (
