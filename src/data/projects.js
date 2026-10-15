@@ -20,6 +20,22 @@ export const projects = {
             { label: "Watch on YouTube", url: "https://www.youtube.com/watch?v=0lrz7CGEIQg&list=PLZIxqPCwO_KfR7vQlYHblV19LgNNGHSS0" }
         ]
     },
+    questscan: {
+        id: "questscan",
+        title: "QuestScan",
+        images: [],
+        description: "Room scanning on a standalone Meta Quest 3: capture an interior with the headset, then walk " +
+            "through it in VR as a textured 3D model or a Gaussian splat.\n" +
+            "The Unity capture app records passthrough camera photos, Depth API frames and the Space Setup room " +
+            "layout, and shows coverage live over passthrough: a GPU depth-fusion volume marks which surfaces have " +
+            "been photographed from enough directions.\n" +
+            "A Python pipeline built on COLMAP and OpenMVS turns the capture into a true-scale textured mesh, filling " +
+            "plain walls and ceilings from the fused depth and room layout, or trains a Gaussian splat that can be " +
+            "viewed in the Quest browser.\n" +
+            "Built with Unity, C#, Meta XR SDK and MRUK, compute shaders, Python, COLMAP and OpenMVS.",
+        // the repo is private, so no source link
+        links: []
+    },
     spacegame:{
         id: "spacegame",
         title: "SpaceGame (Starship Fenterprise)",
