@@ -325,6 +325,16 @@ a:hover {
   outline-offset: -3px;
 }
 
+.card-media-empty {
+  display: grid;
+  place-items: center;
+  aspect-ratio: 16 / 10;
+  border-bottom: 1px dashed var(--border);
+  color: var(--text-muted);
+  font: 13px var(--mono);
+  cursor: default;
+}
+
 .card-body {
   display: flex;
   flex: 1;

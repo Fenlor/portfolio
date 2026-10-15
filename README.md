@@ -10,7 +10,9 @@ My personal portfolio site: a short intro and the projects I've built, each with
 | Project | What it is | Built with |
 | --- | --- | --- |
 | **ASDVR Application** | VR application developed with a psychology PhD student, for the Meta Quest headsets ([video](https://www.youtube.com/watch?v=0lrz7CGEIQg&list=PLZIxqPCwO_KfR7vQlYHblV19LgNNGHSS0)) | Unity, C#, Blender, Audacity |
-| **Starship Fenterprise** | Arcade-style space game that began as a phone prototype and grew into a PC game | Unity, C# |
+| **Starship Fenterprise** | Arcade-style space game for mobile | Unity, C# |
+| **Pinball Game** | 3D pinball game for PC and mobile, built solo | Unity, Blender |
+| **Sensory Dining Plate** | Research project: a mixed reality dining experience for elderly people | |
 | **RecipeMe** | Recipe finder with search by name, country and category, and a hands-free cooking mode, built on [TheMealDB](https://www.themealdb.com/) | React, Vite, CSS |
 
 ## Tech stack

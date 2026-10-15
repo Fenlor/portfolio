@@ -25,9 +25,8 @@ export const projects = {
         title: "SpaceGame (Starship Fenterprise)",
         thumbnail: asdvr1,
         images: [asdvr1, asdvr2, asdvr3],
-        description: "Traditional video game created with Unity and coded in C#.\n" +
-            "Based on arcade games of yore. Started out as a prototype for phone and " +
-            "evolved into a PC game.",
+        description: "Arcade-style mobile game created with Unity and coded in C#.\n" +
+            "Based on arcade games of yore.",
         links: []
     },
     recipeme:{
@@ -41,5 +40,21 @@ export const projects = {
         links: [
             { label: "TheMealDB", url: "https://www.themealdb.com/" }
         ]
+    },
+    pinball: {
+        id: "pinball",
+        title: "Pinball Game",
+        // no screenshots yet: an empty list shows a "screenshots coming soon" panel instead
+        images: [],
+        description: "3D pinball game for PC and mobile.\n" +
+            "Solo project: designed and built by myself using Unity and Blender.",
+        links: []
+    },
+    sensorydining: {
+        id: "sensorydining",
+        title: "Sensory Dining Plate",
+        images: [],
+        description: "Research project: a mixed reality dining experience designed for elderly people.",
+        links: []
     }
 };

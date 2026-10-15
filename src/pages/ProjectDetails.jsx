@@ -37,8 +37,12 @@ const ProjectDetails = () => {
             )}
             <p className="project-description">{project.description}</p>
             <ProjectLinks links={project.links} />
-            <h2 className="section-title">screenshots</h2>
-            <ImageCarousel key={project.id} images={project.images} title={project.title} />
+            {project.images.length > 0 && (
+                <>
+                    <h2 className="section-title">screenshots</h2>
+                    <ImageCarousel key={project.id} images={project.images} title={project.title} />
+                </>
+            )}
         </article>
     )
 }

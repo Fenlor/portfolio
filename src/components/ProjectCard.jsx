@@ -12,15 +12,19 @@ const ProjectCard = ({ project }) => {
 
     return (
         <article className="project-card">
-            <button
-                type="button"
-                className="card-media"
-                aria-label={`View ${title} screenshots`}
-                onClick={() => setOpen(true)}
-            >
-                <img src={images[0]} alt="" loading="lazy" />
-                <span className="card-media-hint" aria-hidden="true">{images.length} screenshots</span>
-            </button>
+            {images.length ? (
+                <button
+                    type="button"
+                    className="card-media"
+                    aria-label={`View ${title} screenshots`}
+                    onClick={() => setOpen(true)}
+                >
+                    <img src={images[0]} alt="" loading="lazy" />
+                    <span className="card-media-hint" aria-hidden="true">{images.length} screenshots</span>
+                </button>
+            ) : (
+                <div className="card-media card-media-empty" aria-hidden="true">screenshots coming soon</div>
+            )}
 
             <div className="card-body">
                 <h3 className="card-title">
