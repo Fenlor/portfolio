@@ -26,9 +26,11 @@ console errors), restart it; a reload is not enough.
 ## Architecture
 
 - **`src/data/projects.js` is the single source of truth for projects**: an object keyed by id. Fields are
-  `id`, `title`, `thumbnail`, `images` (imported from `/public` paths), `description` (`\n` separates
-  paragraphs), `links` (`[{ label, url }]`, rendered by `ProjectLinks`), and optional `youtubeId`
-  (embedded via youtube-nocookie on the details page).
+  `id`, `title`, `type` (one of the ids in the exported `projectTypes`: `xr`, `games`, `web`), `role` (short
+  line such as "Solo project" or "Team project · …"), `images` (imported from `/public` paths; `[]` shows a
+  "screenshots coming soon" panel), `description` (`\n` separates paragraphs), `links` (`[{ label, url }]`,
+  rendered by `ProjectLinks`), and optional `youtubeId` (embedded via youtube-nocookie on the details page).
+  Key order is display order (XR, then games, then web); the home page filter buttons come from `projectTypes`.
 - **Routing** (`App.jsx`, `BrowserRouter` in `main.jsx`): `/` → `Home`; `/project/:id` → `ProjectDetails`,
   which looks the id up (lowercased) in `projects.js` and shows a not-found view for unknown ids. The old
   `/ASDVR`, `/SpaceGame`, `/RecipeMe` paths redirect there. There is no catch-all 404 route, and deploying

@@ -5,7 +5,7 @@ import ImageCarousel from "./ImageCarousel.jsx";
 import ProjectLinks from "./ProjectLinks.jsx";
 
 const ProjectCard = ({ project }) => {
-    const { id, title, description, images, links } = project;
+    const { id, title, type, role, description, images, links } = project;
     const [open, setOpen] = useState(false);
     // the card shows the first paragraph; the details page has the rest
     const summary = description.split("\n")[0];
@@ -27,9 +27,13 @@ const ProjectCard = ({ project }) => {
             )}
 
             <div className="card-body">
-                <h3 className="card-title">
-                    <Link to={`/project/${id}`}>{title}</Link>
-                </h3>
+                <span className="type-tag">{type}</span>
+                <div>
+                    <h3 className="card-title">
+                        <Link to={`/project/${id}`}>{title}</Link>
+                    </h3>
+                    <p className="card-role">{role}</p>
+                </div>
                 <p className="card-summary">{summary}</p>
                 <ProjectLinks links={links} />
                 <Link to={`/project/${id}`} className="card-cta" aria-hidden="true" tabIndex={-1}>

@@ -23,7 +23,9 @@ const ProjectDetails = () => {
             {/* React 19 hoists this into <head> while the page is shown; it wins over index.html's title */}
             <title>{`${project.title} | Andrew Fenn`}</title>
             <Link to="/#projects" className="back-link">← all projects</Link>
+            <span className="type-tag">{project.type}</span>
             <h1 className="page-title">{project.title}</h1>
+            <p className="card-role page-role">{project.role}</p>
             {project.youtubeId && (
                 <div className="video-embed">
                     <iframe

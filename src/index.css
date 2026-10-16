@@ -273,6 +273,74 @@ a:hover {
   color: var(--accent);
 }
 
+.projects-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-bottom: 24px;
+
+  & .section-title {
+    margin-bottom: 0;
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-muted);
+  font: 14px var(--mono);
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.filter-btn[aria-pressed="true"] {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: var(--on-accent);
+}
+
+.filter-count {
+  font-size: 12px;
+}
+
+.card-role {
+  margin: 4px 0 0;
+  color: var(--text-muted);
+  font: 13px var(--mono);
+}
+
+.page-role {
+  margin: -12px 0 24px;
+  font-size: 15px;
+}
+
+.type-tag {
+  align-self: flex-start;
+  display: inline-block;
+  font: 13px var(--mono);
+  padding: 1px 8px;
+  border-radius: 6px;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
@@ -424,6 +492,12 @@ a:hover {
 .project-details {
   max-width: 860px;
   padding-top: 40px;
+
+  & .type-tag {
+    display: block;
+    width: fit-content;
+    margin-bottom: 12px;
+  }
 }
 
 .back-link {
