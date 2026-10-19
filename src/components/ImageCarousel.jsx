@@ -15,6 +15,7 @@ const ImageCarousel = ({ images, title, startIndex = 0 }) => {
             <ThumbnailCarousel
                 images={images}
                 title={title}
+                index={index}
                 onSelect={setIndex}
             />
         </div>

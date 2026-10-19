@@ -14,8 +14,11 @@ the behaviour below changes.
 - `ImageCarousel.jsx`: large preview plus a `ThumbnailCarousel`; takes `images`, `title` and an optional
   `startIndex`. Also used inline (not in a modal) on the project page, which skips it when there are no
   images.
-- `ThumbnailCarousel.jsx`: thumbnails as buttons plus ‹ › arrows. Known limitation: the arrows only move
-  the highlight, they don't change the large image or scroll the track.
+- `ThumbnailCarousel.jsx`: thumbnails as buttons plus ‹ › arrows. It is controlled: `ImageCarousel` owns
+  the selected index and passes `index` and `onSelect`, so the thumbnails and arrows both change the large
+  image. The arrows wrap around at either end and are hidden when there is only one image. The selected
+  thumbnail is kept in view by setting the track's `scrollLeft` directly (not `scrollIntoView`, which can
+  scroll the page too).
 
 ## Modal behaviour (keep all of it)
 

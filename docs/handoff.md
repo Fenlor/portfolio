@@ -30,7 +30,7 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
 6. After deploying: `og:image` and `og:url` in `index.html`.
 
 Optional ideas raised but not decided: switch SpaceGame and RecipeMe to "screenshots coming soon" instead
-of the borrowed ASDVR image; make the carousel arrows actually change the large image.
+of the borrowed ASDVR image.
 
 ## Working with Andrew
 
