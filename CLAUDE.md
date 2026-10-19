@@ -7,8 +7,10 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 Andrew Fenn's personal portfolio: a React 19 + React Router 7 single-page app built with Vite 8, plain JS/JSX
 (no TypeScript), no runtime dependencies beyond those. Public repo: https://github.com/Fenlor/portfolio.
 
-Remaining work is tracked in the review report's checklist (Prioritised recommendations):
-https://claude.ai/code/artifact/aa4bf08c-ccee-4785-abe6-a691a869411d. Tick items there as they land.
+Start a session with [docs/handoff.md](docs/handoff.md): current state, what's waiting on Andrew, and how he
+likes to work. Update it when a round of work ends. Remaining work is also tracked in the review report's
+checklist (Prioritised recommendations): https://claude.ai/code/artifact/aa4bf08c-ccee-4785-abe6-a691a869411d.
+Tick items there as they land.
 
 ## Commands
 
