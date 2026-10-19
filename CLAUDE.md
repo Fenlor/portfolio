@@ -23,6 +23,23 @@ There are no tests. Check changes with `npm run lint`, a build, and the running 
 viewport. If the dev server keeps serving a broken module after a half-finished edit (same `?t=` stamp in
 console errors), restart it; a reload is not enough.
 
+## Where things are
+
+Docs in `docs/` cover areas with rules that aren't obvious from the code. Read an area's doc before changing
+it, and update the doc in the same commit as the code; a stale doc is worse than none. Areas without a doc
+are small enough to read directly.
+
+| Area | Files | Doc |
+| --- | --- | --- |
+| Project data and types | `src/data/projects.js` | below |
+| Routing and app shell | `src/App.jsx`, `src/main.jsx`, `components/Header.jsx`, `components/Footer.jsx` | below |
+| Home page: hero, type filters, grid | `src/pages/Home.jsx`, `components/ProjectCard.jsx` | below |
+| Project page | `src/pages/ProjectDetails.jsx` (per-page `<title>`, YouTube embed) | none |
+| Image viewer and carousels | `components/Modal.jsx`, `components/ImageCarousel.jsx`, `components/ThumbnailCarousel.jsx` | [docs/image-viewer.md](docs/image-viewer.md) |
+| About section | `components/About.jsx` (bio text, `CV_URL`) | below |
+| Project link buttons | `components/ProjectLinks.jsx` | none |
+| Styling, colours, phone layout | `src/index.css`, theme colours in `index.html` | [docs/styling.md](docs/styling.md) |
+
 ## Architecture
 
 - **`src/data/projects.js` is the single source of truth for projects**: an object keyed by id. Fields are
@@ -40,13 +57,8 @@ console errors), restart it; a reload is not enough.
 - **`Home` = hero, project grid, `About`**. The grid maps `Object.values(projects)` to `ProjectCard`, so a
   new project only needs an entry in `projects.js`. Cards show the first paragraph of `description`; the
   details page shows all of it (`white-space: pre-line`).
-- **Image viewer**: the card's image is a button that opens `Modal` (labelled dialog, Escape, Tab trap,
-  focus returned to the opener) containing `ImageCarousel` and a "View full project" link. The modal is a
-  flex column capped at 90dvh so the image shrinks first on short screens; keep that when restyling.
-- **Styling is all in `src/index.css`**, driven by CSS variables on `:root`: a light set ("paper and
-  charcoal") and a dark set ("spruce and slate") under `prefers-color-scheme: dark`. Use the variables, never
-  raw colours; every text colour was picked to stay at or above 4.5:1 contrast in both modes. Headings, nav,
-  buttons and labels use `--mono`; body text uses `--sans`.
+- **Styling** uses the colour variables in `src/index.css` only, with light and dark sets that must both stay
+  at 4.5:1 contrast or better; see [docs/styling.md](docs/styling.md) before touching CSS.
 - The phone number was removed from the site on purpose; don't add it back.
 
 ## Repo conventions
