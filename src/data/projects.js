@@ -116,8 +116,18 @@ export const projects = {
         role: "Solo project",
         // no screenshots yet: an empty list shows a "screenshots coming soon" panel instead
         images: [],
-        description: "3D pinball game for PC and mobile.\n" +
-            "Solo project: designed and built by myself using Unity and Blender.",
+        description: "3D pinball for phones, played in portrait, made in Unity and C#. Two tables so far, " +
+            "Anaconda: Queen of the Amazon and Breakfast Time.\n" +
+            "Real table parts throughout (flippers, an analogue plunger, pop bumpers, slingshots, drop and standup " +
+            "targets, spinners, ramps and diverters, a captive ball, multiball and a tilt meter), and you can nudge " +
+            "the table by shaking the phone.\n" +
+            "The first table has six missions leading up to a wizard mode, scores show on a dot-matrix display, " +
+            "and practice lessons teach the flipper skills.\n" +
+            "Tables are built from code by a custom Unity editor tool, from the meshes and materials to the sound " +
+            "effects, which are synthesised in code too. The Breakfast Time table's food art comes from free food " +
+            "asset packs (pixel food sprites, and low-poly toast and toaster models).\n" +
+            "High scores are kept on the phone, with online leaderboards, a daily challenge and tournaments built " +
+            "on Unity Gaming Services (not live yet).",
         links: []
     }
 };
