@@ -14,7 +14,7 @@ My personal portfolio site: a short intro and the projects I've built, each with
 | **Starship Fenterprise** | Arcade-style space game for mobile | Unity, C# |
 | **Pinball Game** | 3D pinball game for PC and mobile, built solo | Unity, Blender |
 | **Sensory Dining Plate** | Research project: a mixed reality dining experience for elderly people | |
-| **RecipeMe** | Recipe finder with search by name, country and category, and a hands-free cooking mode, built on [TheMealDB](https://www.themealdb.com/) | React, Vite, CSS |
+| **[Recipme](https://recipme.pages.dev/)** | Recipe and meal planning app (beta): hands-free cooking mode, meal plan, shopping lists and pantry, recipe import, works offline | React, Vite, Tailwind CSS, Supabase |
 
 ## Tech stack
 

@@ -14,22 +14,23 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
   https://claude.ai/code/artifact/aa4bf08c-ccee-4785-abe6-a691a869411d. Its Progress table has a row per
   change; add one (and tick checklist items) as work lands.
 - Six projects, in this order: ASDVR, QuestScan, Sensory Dining Plate (xr); Starship Fenterprise, Pinball
-  Game (games); RecipeMe (web). ASDVR and Sensory Dining Plate are team projects; the rest are solo.
+  Game (games); Recipme (web; id `recipeme`, live in beta at https://recipme.pages.dev/). ASDVR and Sensory Dining Plate are team projects; the rest are solo.
 
 ## Waiting on Andrew
 
-1. **Screenshots** for every project. ASDVR, Starship Fenterprise and RecipeMe all still use the one ASDVR
-   placeholder (`public/ASDVR_SS_PH.png`); QuestScan, Pinball and Sensory Dining Plate have none ("coming
-   soon" panel). Plan: crop to a consistent shape, compress to WebP, write alt text, wire into `projects.js`.
+1. **Screenshots** for every project. Recipme has its own (`public/recipme/`: three 1600x1000 WebP
+   images, three phone screens each, captured from the live site at 375x812 @2x with headless Edge and
+   composed with Pillow). ASDVR and Starship Fenterprise still use the one ASDVR placeholder
+   (`public/ASDVR_SS_PH.png`); QuestScan, Pinball and Sensory Dining Plate have none ("coming soon" panel).
 2. **His own words** for the hero intro (`Home.jsx`) and the about bio (`About.jsx`, marked DRAFT).
 3. **CV PDF**: put it in `public/` and set `CV_URL` in `About.jsx`.
 4. **Project details**: tools and highlights for Pinball Game; tools for Sensory Dining Plate; anything new
    on Starship Fenterprise (it stays a mobile game for now; its title may be shortened from
-   "SpaceGame (Starship Fenterprise)"); repo or store links for Starship Fenterprise and RecipeMe.
+   "SpaceGame (Starship Fenterprise)"); a repo or store link for Starship Fenterprise. The Recipme repo is private: never link it.
 5. **Showcase repos** for ASDVR and maybe QuestScan. Both real repos are private: never link them.
 6. After deploying: `og:image` and `og:url` in `index.html`.
 
-Optional ideas raised but not decided: switch SpaceGame and RecipeMe to "screenshots coming soon" instead
+Optional ideas raised but not decided: switch SpaceGame to "screenshots coming soon" instead
 of the borrowed ASDVR image.
 
 ## Working with Andrew

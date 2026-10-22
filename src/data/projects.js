@@ -2,6 +2,9 @@
 import asdvr1 from "/ASDVR_SS_PH.png";
 import asdvr2 from "/ASDVR_SS_PH.png";
 import asdvr3 from "/ASDVR_SS_PH.png";
+import recipme1 from "/recipme/recipme-1.webp";
+import recipme2 from "/recipme/recipme-2.webp";
+import recipme3 from "/recipme/recipme-3.webp";
 
 // filter buttons on the home page, in this order; each project's `type` is one of these ids
 export const projectTypes = [
@@ -84,16 +87,21 @@ export const projects = {
     },
     recipeme:{
         id: "recipeme",
-        title: "RecipeMe",
+        title: "Recipme",
         type: "web",
         role: "Solo project",
-        thumbnail: asdvr1,
-        images: [asdvr1, asdvr2, asdvr3],
-        description: "Parsing recipe objects and displaying recipes in a user-friendly way.\n" +
-            "Includes recipe search by name, country and category, and a hands-free cooking mode.\n" +
-            "Built on TheMealDB's API (themealdb.com) using React, Vite and CSS.",
+        thumbnail: recipme1,
+        images: [recipme1, recipme2, recipme3],
+        description: "Recipe and meal planning app for cooking at home, now live in beta. " +
+            "Built for phones first and installs like an app (works offline too).\n" +
+            "Cooking mode goes through a recipe one step at a time with big text, timers and hands-free voice " +
+            "control (say next, back, repeat or ingredients), and keeps the screen on while you cook.\n" +
+            "Also has a weekly meal plan, shopping lists that fill a pantry, recipe import from websites, PDFs " +
+            "and photos, and names and measures for Australia or the US.\n" +
+            "Built with React, Vite and Tailwind CSS, with Supabase (Postgres, sign-in and edge functions) " +
+            "behind it, hosted on Cloudflare Pages.",
         links: [
-            { label: "TheMealDB", url: "https://www.themealdb.com/" }
+            { label: "Live site (beta)", url: "https://recipme.pages.dev/" }
         ]
     }
 };
