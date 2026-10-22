@@ -24,8 +24,7 @@ const Home = () => {
                 <h1 className="hero-title">Andrew Fenn</h1>
                 <p className="hero-lead">
                     I build interactive experiences: VR applications for Meta Quest, games in Unity,
-                    and web apps in React. Here are a few of my projects, commercial and hobby, including
-                    the early frontend of a recipe finder app I designed.
+                    and web apps in React. Here are a few of my projects, commercial and hobby.
                 </p>
                 <div className="hero-actions">
                     <a href="#projects" className="btn btn-primary">View projects</a>

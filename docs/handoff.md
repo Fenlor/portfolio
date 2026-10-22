@@ -6,10 +6,11 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
 
 ## Where things stand
 
-- Public repo: https://github.com/Fenlor/portfolio. **Not deployed yet**: Andrew wants the content finished
-  first. Hosting is undecided (GitHub Pages was the suggested default; Firebase, Netlify and Vercel were the
-  other options). GitHub Pages would serve from `/portfolio/`, which needs Vite `base`, a `BrowserRouter`
-  `basename`, base-relative public asset paths (e.g. `/andrew.webp` in `About.jsx`) and a 404 fallback.
+- Public repo: https://github.com/Fenlor/portfolio. **Not deployed yet**: agreed on 2026-10-22 to finish the
+  content first. Recommended host is Cloudflare Pages (Recipme is already there): served from the domain
+  root, so no Vite `base` or router `basename` changes; deep links work without a 404 workaround; it
+  rebuilds on push to `main` (build `npm run build`, output `dist`). Andrew connects the repo in the
+  Cloudflare dashboard himself. Still open: a free `*.pages.dev` address or his own domain.
 - The review report and its checklist track the remaining work:
   https://claude.ai/code/artifact/aa4bf08c-ccee-4785-abe6-a691a869411d. Its Progress table has a row per
   change; add one (and tick checklist items) as work lands.
@@ -20,7 +21,9 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
 
 1. **Screenshots** for every project. Recipme has its own (`public/recipme/`: three 1600x1000 WebP
    images, three phone screens each, captured from the live site at 375x812 @2x with headless Edge and
-   composed with Pillow). ASDVR and Starship Fenterprise still use the one ASDVR placeholder
+   composed with Pillow). Starship Fenterprise has three (`public/spacegame/`): the title screen from
+   the Unity device simulator on a blurred copy of itself (the lead and card image), then the level editor
+   (cropped to 16:10) and the world editor (padded to 16:10 with its window grey). Gameplay shots would help. ASDVR still uses the placeholder
    (`public/ASDVR_SS_PH.png`); QuestScan, Pinball and Sensory Dining Plate have none ("coming soon" panel).
 2. **His own words** for the hero intro (`Home.jsx`) and the about bio (`About.jsx`, marked DRAFT).
 3. **CV PDF**: put it in `public/` and set `CV_URL` in `About.jsx`.
@@ -30,8 +33,7 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
 5. **Showcase repos** for ASDVR and maybe QuestScan. Both real repos are private: never link them.
 6. After deploying: `og:image` and `og:url` in `index.html`.
 
-Optional ideas raised but not decided: switch SpaceGame to "screenshots coming soon" instead
-of the borrowed ASDVR image.
+Optional ideas raised but not decided: none right now.
 
 ## Working with Andrew
 

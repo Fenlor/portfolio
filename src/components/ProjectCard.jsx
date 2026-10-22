@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
                     onClick={() => setOpen(true)}
                 >
                     <img src={images[0]} alt="" loading="lazy" />
-                    <span className="card-media-hint" aria-hidden="true">{images.length} screenshots</span>
+                    <span className="card-media-hint" aria-hidden="true">{images.length} {images.length === 1 ? "screenshot" : "screenshots"}</span>
                 </button>
             ) : (
                 <div className="card-media card-media-empty" aria-hidden="true">screenshots coming soon</div>
