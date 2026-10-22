@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { createPortal } from "react-dom";
 
 const FOCUSABLE = 'a[href], button:not([disabled]), iframe, [tabindex]:not([tabindex="-1"])';
 
@@ -50,13 +51,16 @@ const Modal = ({ isOpen, onClose, label, children }) => {
             document.removeEventListener("keydown", onKeyDown);
             document.body.style.overflow = bodyOverflow;
             // hand focus back to whatever opened the dialog (the thumbnail), if it is still on the page
-            if (opener?.isConnected) opener.focus();
+            // preventScroll: a half-visible opener would otherwise jump the page on close
+            if (opener?.isConnected) opener.focus({ preventScroll: true });
         };
     }, [isOpen]);
 
     if(!isOpen) return null;
 
-    return(
+    // portal to <body>: inside a card, the card's hover transform would make position: fixed relative to the
+    // card, so the dialog was clipped by it, and on touch it flickered between card-sized and full-screen
+    return createPortal(
         <div className="modal-backdrop" onClick={onClose}>
             <div
                 ref={dialogRef}
@@ -69,7 +73,8 @@ const Modal = ({ isOpen, onClose, label, children }) => {
                 <button type="button" className="modal-close" aria-label="Close" onClick={onClose}>×</button>
                 {children}
             </div>
-        </div>
+        </div>,
+        document.body
     );
 };
 

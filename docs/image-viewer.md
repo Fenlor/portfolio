@@ -10,7 +10,9 @@ the behaviour below changes.
   `Modal` with `ImageCarousel` and a "View full project →" link. A project with `images: []` gets a
   non-interactive "screenshots coming soon" panel instead, and no modal.
 - `Modal.jsx`: the dialog itself (behaviour below). It renders nothing while closed, so the carousel inside
-  starts fresh on every open.
+  starts fresh on every open. It renders through a portal into `<body>`: `.project-card:hover` uses a
+  `transform`, which makes `position: fixed` relative to the card, so a dialog left inside the card was clipped
+  by it and, on touch, flickered between card-sized and full-screen. Keep the portal.
 - `ImageCarousel.jsx`: large preview plus a `ThumbnailCarousel`; takes `images`, `title` and an optional
   `startIndex`. Also used inline (not in a modal) on the project page, which skips it when there are no
   images.
@@ -27,7 +29,8 @@ the behaviour below changes.
 - Tab and Shift+Tab wrap around inside the dialog; focus can't reach the page behind.
 - Escape, the Close button, or a click on the backdrop closes it.
 - The page behind can't scroll while it is open (`body` overflow hidden, restored on close).
-- On close, focus returns to the element that opened it, if that element is still on the page.
+- On close, focus returns to the element that opened it, if that element is still on the page, without
+  scrolling (`preventScroll`), so the page stays where it was.
 - `onClose` is read through a ref, so the open/close effect runs once per open even though parents pass a
   new arrow function each render. Don't add `onClose` to that effect's dependencies.
 
