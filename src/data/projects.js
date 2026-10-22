@@ -73,12 +73,15 @@ export const projects = {
         role: "Solo project",
         thumbnail: spacegameTitle,
         images: [spacegameTitle, spacegameEditor, spacegameWorld],
-        description: "Arcade-style mobile game created with Unity and coded in C#.\n" +
-            "Based on arcade games of yore.\n" +
+        description: "Portrait vertical shooter for Android, made in Unity 6 and coded in C#. Based on arcade " +
+            "games of yore, now growing into a roguelite.\n" +
+            "Each run is generated from a seed (shown as a six-character code on the title screen), so the same " +
+            "seed always gives the same levels. Three ships, eight weapons, enemy waves flying along spline " +
+            "paths, two bosses, and loot, new guns and level-ups along the way.\n" +
             "Levels are built in my own Unity level editor: sections of enemy waves, each following a path " +
             "that can be mirrored and offset, previewed in the scene view, plus an optional boss.\n" +
             "A world editor lays those levels out as a path that can fork into branches, and shows the save's " +
-            "progress along it.",
+            "progress along it. Wave paths can also be drawn straight on the phone in an in-game editor.",
         links: []
     },
     pinball: {
