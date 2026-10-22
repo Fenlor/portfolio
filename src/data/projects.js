@@ -9,6 +9,8 @@ import recipme1 from "/recipme/recipme-1.webp";
 import recipme2 from "/recipme/recipme-2.webp";
 import recipme3 from "/recipme/recipme-3.webp";
 import spacegameTitle from "/spacegame/title-screen.webp";
+import spacegameGameplay from "/spacegame/gameplay.webp";
+import spacegameLevelUp from "/spacegame/level-up.webp";
 import spacegameEditor from "/spacegame/level-editor.webp";
 import spacegameWorld from "/spacegame/world-editor.webp";
 
@@ -19,8 +21,46 @@ export const projectTypes = [
     { id: "web", label: "web" },
 ];
 
-// the home page grid follows this order: XR first, then games, then web
+// the home page grid follows this order: Recipme and Starship Fenterprise first, then the rest
 export const projects = {
+    recipeme:{
+        id: "recipeme",
+        title: "Recipme",
+        type: "web",
+        role: "Solo project",
+        thumbnail: recipme1,
+        images: [recipme1, recipme2, recipme3],
+        description: "I started designing a personal recipe database, then I wanted a better way to display " +
+            "recipes. Adding a meal planner, shopping list and pantry, and we have a cosy little environment.\n" +
+            "Now live in beta. Built for phones first and installs like an app (works offline too).\n" +
+            "Cooking mode goes through a recipe one step at a time with big text, timers and hands-free voice " +
+            "control (say next, back, repeat or ingredients), and keeps the screen on while you cook.\n" +
+            "Recipes can be imported from websites, PDFs and photos, and show names and measures for Australia " +
+            "or the US.\n" +
+            "Built with React, Vite and Tailwind CSS, with Supabase (Postgres, sign-in and edge functions) " +
+            "behind it, hosted on Cloudflare Pages.",
+        links: [
+            { label: "Live site (beta)", url: "https://recipme.pages.dev/" }
+        ]
+    },
+    spacegame:{
+        id: "spacegame",
+        title: "Starship Fenterprise",
+        type: "games",
+        role: "Solo project",
+        thumbnail: spacegameTitle,
+        images: [spacegameTitle, spacegameGameplay, spacegameLevelUp, spacegameEditor, spacegameWorld],
+        description: "Vertical shooter for Android phones, made in Unity and C#. Started as a nod to the arcade " +
+            "games of yore, now turning into a roguelite where every run is different.\n" +
+            "Each run is generated from a seed (shown as a six-character code on the title screen), so the same " +
+            "seed always gives the same levels. Three ships, eight weapons, enemy waves flying along spline " +
+            "paths, two bosses, and loot, new guns and level-ups along the way.\n" +
+            "Levels are built in my own Unity level editor: sections of enemy waves, each following a path " +
+            "that can be mirrored and offset, previewed in the scene view, plus an optional boss.\n" +
+            "A world editor lays those levels out as a path that can fork into branches, and shows the save's " +
+            "progress along it. Wave paths can also be drawn straight on the phone in an in-game editor.",
+        links: []
+    },
     asdvr: {
         id: "asdvr",
         title: "ASDVR Application",
@@ -69,24 +109,6 @@ export const projects = {
             "integrating other assets; and scene work on scene loading and render modes.",
         links: []
     },
-    spacegame:{
-        id: "spacegame",
-        title: "Starship Fenterprise",
-        type: "games",
-        role: "Solo project",
-        thumbnail: spacegameTitle,
-        images: [spacegameTitle, spacegameEditor, spacegameWorld],
-        description: "Vertical shooter for Android phones, made in Unity and C#. Started as a nod to the arcade " +
-            "games of yore, now turning into a roguelite where every run is different.\n" +
-            "Each run is generated from a seed (shown as a six-character code on the title screen), so the same " +
-            "seed always gives the same levels. Three ships, eight weapons, enemy waves flying along spline " +
-            "paths, two bosses, and loot, new guns and level-ups along the way.\n" +
-            "Levels are built in my own Unity level editor: sections of enemy waves, each following a path " +
-            "that can be mirrored and offset, previewed in the scene view, plus an optional boss.\n" +
-            "A world editor lays those levels out as a path that can fork into branches, and shows the save's " +
-            "progress along it. Wave paths can also be drawn straight on the phone in an in-game editor.",
-        links: []
-    },
     pinball: {
         id: "pinball",
         title: "Pinball Game",
@@ -97,25 +119,5 @@ export const projects = {
         description: "3D pinball game for PC and mobile.\n" +
             "Solo project: designed and built by myself using Unity and Blender.",
         links: []
-    },
-    recipeme:{
-        id: "recipeme",
-        title: "Recipme",
-        type: "web",
-        role: "Solo project",
-        thumbnail: recipme1,
-        images: [recipme1, recipme2, recipme3],
-        description: "I started designing a personal recipe database, then I wanted a better way to display " +
-            "recipes. Adding a meal planner, shopping list and pantry, and we have a cosy little environment.\n" +
-            "Now live in beta. Built for phones first and installs like an app (works offline too).\n" +
-            "Cooking mode goes through a recipe one step at a time with big text, timers and hands-free voice " +
-            "control (say next, back, repeat or ingredients), and keeps the screen on while you cook.\n" +
-            "Recipes can be imported from websites, PDFs and photos, and show names and measures for Australia " +
-            "or the US.\n" +
-            "Built with React, Vite and Tailwind CSS, with Supabase (Postgres, sign-in and edge functions) " +
-            "behind it, hosted on Cloudflare Pages.",
-        links: [
-            { label: "Live site (beta)", url: "https://recipme.pages.dev/" }
-        ]
     }
 };

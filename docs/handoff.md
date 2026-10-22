@@ -14,16 +14,19 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
 - The review report and its checklist track the remaining work:
   https://claude.ai/code/artifact/aa4bf08c-ccee-4785-abe6-a691a869411d. Its Progress table has a row per
   change; add one (and tick checklist items) as work lands.
-- Six projects, in this order: ASDVR, QuestScan, Sensory Dining Plate (xr); Starship Fenterprise, Pinball
-  Game (games); Recipme (web; id `recipeme`, live in beta at https://recipme.pages.dev/). ASDVR and Sensory Dining Plate are team projects; the rest are solo.
+- Six projects, in this order (Andrew put Recipme and Starship Fenterprise first): Recipme (web; id
+  `recipeme`, live in beta at https://recipme.pages.dev/), Starship Fenterprise (games), ASDVR, QuestScan,
+  Sensory Dining Plate (xr), Pinball Game (games). ASDVR and Sensory Dining Plate are team projects; the rest are solo.
 
 ## Waiting on Andrew
 
 1. **Screenshots** for every project. Recipme has its own (`public/recipme/`: three 1600x1000 WebP
    images, three phone screens each, captured from the live site at 375x812 @2x with headless Edge and
-   composed with Pillow). Starship Fenterprise has three (`public/spacegame/`): the title screen from
-   the Unity device simulator on a blurred copy of itself (the lead and card image), then the level editor
-   (cropped to 16:10) and the world editor (padded to 16:10 with its window grey). Gameplay shots would help. ASDVR has six (`public/asdvr/`):
+   composed with Pillow). Starship Fenterprise has five (`public/spacegame/`): the title screen from
+   the Unity device simulator on a blurred copy of itself (the lead and card image), gameplay beside the
+   scene view, a level-up choice beside play at level 5
+   with upgrades, then the level editor
+   (cropped to 16:10) and the world editor (padded to 16:10 with its window grey). ASDVR has six (`public/asdvr/`):
    4K Quest 3 screenshots pulled over adb from `/sdcard/Oculus/Screenshots`, centre-cropped to 16:10. The old
    placeholder `public/ASDVR_SS_PH.png` is no longer used. QuestScan, Pinball and Sensory Dining Plate have
    none ("coming soon" panel).
