@@ -1,7 +1,10 @@
 // projects.js
-import asdvr1 from "/ASDVR_SS_PH.png";
-import asdvr2 from "/ASDVR_SS_PH.png";
-import asdvr3 from "/ASDVR_SS_PH.png";
+import asdvr1 from "/asdvr/asdvr-1.webp";
+import asdvr2 from "/asdvr/asdvr-2.webp";
+import asdvr3 from "/asdvr/asdvr-3.webp";
+import asdvr4 from "/asdvr/asdvr-4.webp";
+import asdvr5 from "/asdvr/asdvr-5.webp";
+import asdvr6 from "/asdvr/asdvr-6.webp";
 import recipme1 from "/recipme/recipme-1.webp";
 import recipme2 from "/recipme/recipme-2.webp";
 import recipme3 from "/recipme/recipme-3.webp";
@@ -25,7 +28,7 @@ export const projects = {
         // short role line shown on the card and the details page
         role: "Team project · sole software developer",
         thumbnail: asdvr1,
-        images: [asdvr1, asdvr2, asdvr3],
+        images: [asdvr1, asdvr2, asdvr3, asdvr4, asdvr5, asdvr6],
         // optional: the id from a YouTube URL (watch?v=<id>), embedded on the details page
         youtubeId: "0lrz7CGEIQg",
         description: "VR application developed in collaboration with a psychology PhD student.\n" +

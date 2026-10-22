@@ -23,8 +23,10 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
    images, three phone screens each, captured from the live site at 375x812 @2x with headless Edge and
    composed with Pillow). Starship Fenterprise has three (`public/spacegame/`): the title screen from
    the Unity device simulator on a blurred copy of itself (the lead and card image), then the level editor
-   (cropped to 16:10) and the world editor (padded to 16:10 with its window grey). Gameplay shots would help. ASDVR still uses the placeholder
-   (`public/ASDVR_SS_PH.png`); QuestScan, Pinball and Sensory Dining Plate have none ("coming soon" panel).
+   (cropped to 16:10) and the world editor (padded to 16:10 with its window grey). Gameplay shots would help. ASDVR has six (`public/asdvr/`):
+   4K Quest 3 screenshots pulled over adb from `/sdcard/Oculus/Screenshots`, centre-cropped to 16:10. The old
+   placeholder `public/ASDVR_SS_PH.png` is no longer used. QuestScan, Pinball and Sensory Dining Plate have
+   none ("coming soon" panel).
 2. **His own words** for the hero intro (`Home.jsx`) and the about bio (`About.jsx`, marked DRAFT).
 3. **CV PDF**: put it in `public/` and set `CV_URL` in `About.jsx`.
 4. **Project details**: tools and highlights for Pinball Game; tools for Sensory Dining Plate; anything new
