@@ -68,13 +68,13 @@ export const projects = {
     },
     spacegame:{
         id: "spacegame",
-        title: "SpaceGame (Starship Fenterprise)",
+        title: "Starship Fenterprise",
         type: "games",
         role: "Solo project",
         thumbnail: spacegameTitle,
         images: [spacegameTitle, spacegameEditor, spacegameWorld],
-        description: "Portrait vertical shooter for Android, made in Unity 6 and coded in C#. Based on arcade " +
-            "games of yore, now growing into a roguelite.\n" +
+        description: "Vertical shooter for Android phones, made in Unity and C#. Started as a nod to the arcade " +
+            "games of yore, now turning into a roguelite where every run is different.\n" +
             "Each run is generated from a seed (shown as a six-character code on the title screen), so the same " +
             "seed always gives the same levels. Three ships, eight weapons, enemy waves flying along spline " +
             "paths, two bosses, and loot, new guns and level-ups along the way.\n" +

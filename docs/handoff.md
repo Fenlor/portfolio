@@ -28,8 +28,8 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
 2. **His own words** for the hero intro (`Home.jsx`) and the about bio (`About.jsx`, marked DRAFT).
 3. **CV PDF**: put it in `public/` and set `CV_URL` in `About.jsx`.
 4. **Project details**: tools and highlights for Pinball Game; tools for Sensory Dining Plate; anything new
-   on Starship Fenterprise (it stays a mobile game for now; its title may be shortened from
-   "SpaceGame (Starship Fenterprise)"); a repo or store link for Starship Fenterprise. The Recipme repo is private: never link it.
+   on Starship Fenterprise (an Android roguelite in progress; its levels are test content for now); a
+   store link for it once there is one. The Starship Fenterprise and Recipme repos are private: never link them.
 5. **Showcase repos** for ASDVR and maybe QuestScan. Both real repos are private: never link them.
 6. After deploying: `og:image` and `og:url` in `index.html`.
 
