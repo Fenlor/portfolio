@@ -13,6 +13,10 @@ import spacegameGameplay from "/spacegame/gameplay.webp";
 import spacegameLevelUp from "/spacegame/level-up.webp";
 import spacegameEditor from "/spacegame/level-editor.webp";
 import spacegameWorld from "/spacegame/world-editor.webp";
+import pinballPlay from "/pinball/anaconda-play.webp";
+import pinballBreakfast from "/pinball/breakfast-play.webp";
+import pinballChooseTable from "/pinball/choose-table.webp";
+import pinballTableMenu from "/pinball/table-menu.webp";
 
 // filter buttons on the home page, in this order; each project's `type` is one of these ids
 export const projectTypes = [
@@ -80,11 +84,36 @@ export const projects = {
             { label: "Watch on YouTube", url: "https://www.youtube.com/watch?v=0lrz7CGEIQg&list=PLZIxqPCwO_KfR7vQlYHblV19LgNNGHSS0" }
         ]
     },
+    pinball: {
+        id: "pinball",
+        title: "Pinball Game",
+        type: "games",
+        role: "Solo project",
+        thumbnail: pinballBreakfast,
+        images: [pinballBreakfast, pinballPlay, pinballChooseTable, pinballTableMenu],
+        description: "3D pinball for PC, with PCVR, made in Unity and C#. Two tables so far, " +
+            "Anaconda: Queen of the Amazon and Breakfast Time.\n" +
+            "Starting research and testing on PC and leaving mobile for later testing. I have since decided to " +
+            "focus development purely on PC to allow for the best physics model to be used. With a PCVR feature " +
+            "enabled.\n" +
+            "Real table parts throughout (flippers, an analogue plunger, pop bumpers, slingshots, drop and standup " +
+            "targets, spinners, ramps and diverters, a captive ball, multiball and a tilt meter), and you can nudge " +
+            "the table.\n" +
+            "The first table has six missions leading up to a wizard mode, scores show on a dot-matrix display, " +
+            "and practice lessons teach the flipper skills.\n" +
+            "Tables are built from code by a custom Unity editor tool, from the meshes and materials to the sound " +
+            "effects, which are synthesised in code too. The Breakfast Time table's food art comes from free food " +
+            "asset packs (pixel food sprites, and low-poly toast and toaster models).\n" +
+            "High scores are saved locally, with online leaderboards, a daily challenge and tournaments built " +
+            "on Unity Gaming Services (not live yet).",
+        links: []
+    },
     questscan: {
         id: "questscan",
         title: "QuestScan",
         type: "xr",
         role: "Solo project",
+        // no screenshots yet: an empty list shows a "screenshots coming soon" panel instead
         images: [],
         description: "Room scanning on a standalone Meta Quest 3: capture an interior with the headset, then walk " +
             "through it in VR as a textured 3D model or a Gaussian splat.\n" +
@@ -107,27 +136,6 @@ export const projects = {
         description: "Research project: a mixed reality dining experience designed for elderly people.\n" +
             "My part: the in-app wrist menu; creating the table and chair for the outdoor scene; sourcing and " +
             "integrating other assets; and scene work on scene loading and render modes.",
-        links: []
-    },
-    pinball: {
-        id: "pinball",
-        title: "Pinball Game",
-        type: "games",
-        role: "Solo project",
-        // no screenshots yet: an empty list shows a "screenshots coming soon" panel instead
-        images: [],
-        description: "3D pinball for phones, played in portrait, made in Unity and C#. Two tables so far, " +
-            "Anaconda: Queen of the Amazon and Breakfast Time.\n" +
-            "Real table parts throughout (flippers, an analogue plunger, pop bumpers, slingshots, drop and standup " +
-            "targets, spinners, ramps and diverters, a captive ball, multiball and a tilt meter), and you can nudge " +
-            "the table by shaking the phone.\n" +
-            "The first table has six missions leading up to a wizard mode, scores show on a dot-matrix display, " +
-            "and practice lessons teach the flipper skills.\n" +
-            "Tables are built from code by a custom Unity editor tool, from the meshes and materials to the sound " +
-            "effects, which are synthesised in code too. The Breakfast Time table's food art comes from free food " +
-            "asset packs (pixel food sprites, and low-poly toast and toaster models).\n" +
-            "High scores are kept on the phone, with online leaderboards, a daily challenge and tournaments built " +
-            "on Unity Gaming Services (not live yet).",
         links: []
     }
 };

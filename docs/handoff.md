@@ -15,8 +15,8 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
   https://claude.ai/code/artifact/aa4bf08c-ccee-4785-abe6-a691a869411d. Its Progress table has a row per
   change; add one (and tick checklist items) as work lands.
 - Six projects, in this order (Andrew put Recipme and Starship Fenterprise first): Recipme (web; id
-  `recipeme`, live in beta at https://recipme.pages.dev/), Starship Fenterprise (games), ASDVR, QuestScan,
-  Sensory Dining Plate (xr), Pinball Game (games). ASDVR and Sensory Dining Plate are team projects; the rest are solo.
+  `recipeme`, live in beta at https://recipme.pages.dev/), Starship Fenterprise (games), ASDVR (xr), Pinball
+  Game (games), QuestScan, Sensory Dining Plate (xr). ASDVR and Sensory Dining Plate are team projects; the rest are solo.
 
 ## Waiting on Andrew
 
@@ -28,11 +28,13 @@ Last updated: 2026-10-19, at commit `3b98846` (everything committed and pushed t
    with upgrades, then the level editor
    (cropped to 16:10) and the world editor (padded to 16:10 with its window grey). ASDVR has six (`public/asdvr/`):
    4K Quest 3 screenshots pulled over adb from `/sdcard/Oculus/Screenshots`, centre-cropped to 16:10. The old
-   placeholder `public/ASDVR_SS_PH.png` is no longer used. QuestScan, Pinball and Sensory Dining Plate have
-   none ("coming soon" panel).
+   placeholder `public/ASDVR_SS_PH.png` is no longer used. Pinball has four (`public/pinball/`), all from the
+   desktop build: Breakfast Time in play (the card image), Anaconda in play, the choose-a-table screen (all three letterboxed to 16:10 in
+   the game's own near-black) and a table's menu. QuestScan and Sensory Dining Plate have none ("coming soon" panel).
 2. **His own words** for the hero intro (`Home.jsx`) and the about bio (`About.jsx`, marked DRAFT).
 3. **CV PDF**: put it in `public/` and set `CV_URL` in `About.jsx`.
-4. **Project details**: Pinball's description came from its project folder (`D:\Dev\Unity\Pinball3D`, repo
+4. **Project details**: Pinball is PC-first with PCVR (Andrew's decision, his own paragraph on the page;
+   mobile left for later). Its description came from its project folder (`D:\Dev\Unity\Pinball3D`, repo
    private: never link it); it no longer mentions Blender, as the tables are generated in code. The Breakfast Time table's food art
    is from free CC0 packs (itch.io, Poly Pizza; listed in that project's `Assets/Pinball/ThirdParty/LICENSES.md`), not
    the Unity Asset Store. Tools for

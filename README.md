@@ -12,7 +12,7 @@ My personal portfolio site: a short intro and the projects I've built, each with
 | **ASDVR Application** | VR application developed with a psychology PhD student, for the Meta Quest headsets ([video](https://www.youtube.com/watch?v=0lrz7CGEIQg&list=PLZIxqPCwO_KfR7vQlYHblV19LgNNGHSS0)) | Unity, C#, Blender, Audacity |
 | **QuestScan** | Room scanning on Meta Quest 3: capture an interior with the headset, then walk through it as a textured mesh or Gaussian splat | Unity, C#, Meta XR SDK, Python, COLMAP, OpenMVS |
 | **Starship Fenterprise** | Arcade-style space game for mobile | Unity, C# |
-| **Pinball Game** | 3D pinball for phones with two tables, missions, multiball and online scores (not live yet), built solo | Unity, C#, free food asset packs |
+| **Pinball Game** | 3D pinball for PC (with PCVR) with two tables, missions, multiball and online scores (not live yet), built solo | Unity, C#, free food asset packs |
 | **Sensory Dining Plate** | Research project: a mixed reality dining experience for elderly people | |
 | **[Recipme](https://recipme.pages.dev/)** | Recipe and meal planning app (beta): hands-free cooking mode, meal plan, shopping lists and pantry, recipe import, works offline | React, Vite, Tailwind CSS, Supabase |
 
